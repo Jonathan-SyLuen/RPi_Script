@@ -15,7 +15,7 @@ Data = ThisRTC.ReadDateTime(DateTime)
  
 DateSetResponse = os.popen("date -s \"" + Data + "\"").read()
  
-print (f"Time has been set to: $DateSetResponse")
+print (f'Time has been set to: {DateSetResponse}')
  
 # Finish with the Raspberry Pi GPIO pins.
 ThisRTC.CloseGPIO()

@@ -15,11 +15,11 @@ ThisRTC.WriteRAM('Last set: ' + os.popen('date +"%Y-%m-%d %H:%M:%S"').read().rep
 dateArray = dateString.split()
  
 ThisRTC.WriteDateTime(int(dateArray[0]), int(dateArray[1]), int(dateArray[2]), int(dateArray[3]), int(dateArray[4]), int(dateArray[5]), int(dateArray[6]))
-print (f'Date set was: $dateString')
+print (f'Date set was: {dateString}')
  
 DateTime = { "Year":0, "Month":0, "Day":0, "DayOfWeek":0, "Hour":0, "Minute":0, "Second":0 }
 Data = ThisRTC.ReadDateTime(DateTime)
-print (f'Date read was: $Data')
+print (f'Date read was: {Data}')
  
 # Finish with the Raspberry Pi GPIO pins.
 ThisRTC.CloseGPIO()
