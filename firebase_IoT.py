@@ -67,11 +67,12 @@ if __name__ == '__main__':
     data = []
     need_update_sea_level_pressure = True
     print(f'There are {len(data)} readings not push to internet')
-    if check_internet_connection():
-        sea_level_pressure = fetch_sea_level_pressure()
-    else:
-        sea_level_pressure = 1013
-
+    sleep(60)
+    for i in range(3):
+        if check_internet_connection():
+            sea_level_pressure = fetch_sea_level_pressure()
+        else:
+            sea_level_pressure = 1013
     try:
         with open('backup.pkl', 'rb') as input:
             data = _pickle.load(input)
